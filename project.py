@@ -9,12 +9,16 @@ class Hewan(ABC):
         print(f"{self.nama} sedang makan.")
         
     @abstractmethod      
-    def jenis_aksi(self):
+    def bergerak(self):
         pass
 
 class HewanTerbang(Hewan):
-    def jenis_aksi(self):
+    def bergerak(self):
         print(f"{self.nama} sedang terbang.")
+
+class HewanDarat(Hewan):
+    def bergerak(self):
+        print(f"{self.nama} sedang berjalan.")
         
 class Kandang:
     def __init__(self):
@@ -38,4 +42,4 @@ class PerawatanHewan:
     def rawat_semua_hewan(self):
         for hewan in self.kandang.hewan_list:
             hewan.makan()
-            hewan.jenis_aksi()
+            hewan.bergerak()
