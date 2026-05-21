@@ -16,10 +16,6 @@ class HewanTerbang(Hewan):
     def jenis_aksi(self):
         print(f"{self.nama} sedang terbang.")
         
-class HewanDarat(Hewan):
-    def jenis_aksi(self):
-        print(f"{self.nama} sedang berjalan")
-
 class Kandang:
     def __init__(self):
         self.hewan_list = []
