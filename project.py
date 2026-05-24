@@ -97,8 +97,10 @@ perawatan_kandang = PerawatanKandang()
 
 kandang.tambah_hewan(HewanTerbang("Love bird"))
 kandang.tambah_hewan(HewanTerbang("Elang"))
+kandang.tambah_hewan(HewanTerbang("Jalak"))
 kandang.tambah_hewan(HewanDarat("Gajah"))
 kandang.tambah_hewan(HewanDarat("Kucing"))
+kandang.tambah_hewan(HewanDarat("Singa"))
 
 kebun = KebunBinatang(kandang, perawatan_kandang)
 kebun.operasional_harian()
