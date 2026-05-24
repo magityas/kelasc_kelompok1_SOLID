@@ -92,7 +92,7 @@ class PerawatanHewan:
             print("---")
 
 
-kandang = kandang()
+kandang = Kandang()
 perawatan_kandang = PerawatanKandang()
 
 kandang.tambah_hewan(HewanTerbang("Love bird"))
