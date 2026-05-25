@@ -22,6 +22,11 @@ class PerawatanKandangInterface(ABC):
     def bersihkan(self):
         pass
 
+class PerawatanHewanInterface(ABC):
+    @abstractmethod
+    def rawat_semua_hewan(self):
+        pass
+        
 class HewanTerbang(BisaMakan, BisaBergerak):
     def __init__(self, nama):
         self.nama = nama
@@ -52,16 +57,21 @@ class PerawatanKandang(PerawatanKandangInterface):
 
 class KebunBinatang:
     def __init__(
-        self, kandang: KandangInterface, perawatan_kandang: PerawatanKandangInterface):
+        self,
+        kandang: KandangInterface,
+        perawatan_kandang: PerawatanKandangInterface,
+        perawatan_hewan: PerawatanHewanInterface
+    ):
         self.kandang = kandang
         self.perawatan_kandang = perawatan_kandang
-        self.perawatan_hewan = PerawatanHewan(kandang)
+        self.perawatan_hewan = perawatan_hewan
+
     def operasional_harian(self):
         print("=== Operasional Harian Kebun Binatang ===")
         self.perawatan_kandang.bersihkan()
         self.perawatan_hewan.rawat_semua_hewan()
-
-class PerawatanHewan:
+        
+class PerawatanHewan(PerawatanHewanInterface):
     def __init__(self, kandang: KandangInterface):
         self.kandang = kandang
     def rawat_semua_hewan(self):
@@ -69,7 +79,7 @@ class PerawatanHewan:
             hewan.makan()
             hewan.bergerak()
             print("---")
-
+            
 kandang = Kandang()
 perawatan_kandang = PerawatanKandang()
 
@@ -80,5 +90,12 @@ kandang.tambah_hewan(HewanDarat("Gajah"))
 kandang.tambah_hewan(HewanDarat("Kucing"))
 kandang.tambah_hewan(HewanDarat("Singa"))
 
-kebun = KebunBinatang(kandang, perawatan_kandang)
+perawatan_hewan = PerawatanHewan(kandang)
+
+kebun = KebunBinatang(
+    kandang,
+    perawatan_kandang,
+    perawatan_hewan
+)
+
 kebun.operasional_harian()
