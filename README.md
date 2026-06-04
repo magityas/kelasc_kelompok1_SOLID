@@ -1,4 +1,4 @@
-#KelasC_Kelompok1_SOLID
+KelasC_Kelompok1_SOLID
 Project ini adalah implementasi konsep Object Oriented Programming (OOP) dengan pendekatan SOLID Principles dalam bahasa Python.
 
 Deskripsi Project
