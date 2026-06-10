@@ -1,9 +1,9 @@
-KelasC_Kelompok1_SOLID
+KelasC_Kelompok1_SOLID-latihan-1
 Project ini adalah implementasi konsep Object Oriented Programming (OOP) dengan pendekatan SOLID Principles dalam bahasa Python.
 
 Deskripsi Project
 Project ini mensimulasikan sistem pengelolaan hewan pada beberapa modul seperti:
-- Kandang hewan
+- Kandang hewana
 - Kebun binatang
 - Perawatan hewan
 
